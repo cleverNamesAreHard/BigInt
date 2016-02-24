@@ -4,7 +4,7 @@
 using namespace std;
 
 class BigInt {
-public:
+private:
 	vector<int> a;
 	int sign;
 
@@ -52,3 +52,5 @@ public:
 
 BigInt BigPow(const BigInt &v, long long a);
 BigInt BigFactorial(const BigInt &v);
+BigInt BigFlooredSqrt(const BigInt &v);
+bool BigIsPrime(BigInt &v);
