@@ -5,37 +5,30 @@ The header file `BigInt.h` contains the definition of the functions implemented 
 
 The file `Main.cpp` contains a few lines of testing for the library.
 
-Currently implemented are the operators `+`, `-`, `*`, `/`, `+=`, `-=`, `*=`, and `/=`.  Included at this time are functions for exponents (`BigPow(BigInt)`), and factorials (`BigFactorial(BigInt)`).
+Currently implemented are the arithmetic operators: `+`, `-`, `*`, `/`, `+=`, `-=`, `*=`, and `/=`.  In addition, I have implement the logic operators `<`, `>`, `<=`, `>=`, `==`, and `!=`.  It has the ability to pipe into and out of `cout` and `cin` respectively via `<<` and `>>`.
+
+The multiplication function implements Karatsuba multiplication.
+
+The division function implements a modulus-based iterative method of finding the quotient.
+
+The square root function implements a two-variable iterative method of finding square roots.
+
+Also implemented are functions for:
+
+* Exponents (`BigInt BigPow()`),
+* Factorials (`BigInt BigFactorial()`),
+* **Floored** `floor(sqrt())` square roots (`BigInt BigFlooredSqrt()`), 
+* Primacy testing (`bool BigIsPrime()`) via 
 
 It is also worth noting that this library does **not** support the following at this time:
 
 * Decimals and floating point precision
-* Division with answers with decimals
-* I'm sure I'll realize more soon.
+* ... More to come
 
-Usage:
+TODO:
 
-	BigInt current_num = 2;
-	current_num = BigPow(current_num, 16);
-	cout << current_num << endl;
-
-`>65536`
-
-	current_num = BigInt("1000000000000000000000000000000000000000000000000000000000000000000000000000");
-	BigInt newNum("99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999");
-	BigInt answer = current_num * newNum;
-	cout << answer << endl;
-
-`>99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999000000000000000000000000000000000000000000000000000000000000000000000000000`
-
-	BigInt test_num(6);
-	cout << BigFactorial(test_num) << endl;
-
-`>720`
-
-	current_num = BigInt(6);
-	newNum = BigInt(2);
-	answer = current_num / newNum;
-	cout << answer << endl;
-
-`>3`
+* Implement recursive factorial function
+* More efficient primacy tests
+* More efficient square root tests (bitwise)
+* BigBit data type
+* BigFloat data type
